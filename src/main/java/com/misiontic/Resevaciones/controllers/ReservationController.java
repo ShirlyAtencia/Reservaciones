@@ -17,7 +17,7 @@ public class ReservationController {
     Reserva getReserva(@PathVariable String username){
         return reservaRepository.findById(username)
                 .orElseThrow(()-> new ReservaNotFoundException("No se encontró una reservación asociada al usuario "+
-                        username + " solicitado")
+                        username)
                 );
     }
 
@@ -57,7 +57,7 @@ public class ReservationController {
             throws ReservaNotFoundException {
         Reserva reserva = reservaRepository.findById(username)
                 .orElseThrow(() -> new ReservaNotFoundException("No se encontró una reservación asociada al usuario "
-                        +username+" solicitado"));
+                        +username));
 
         reservaRepository.delete(reserva);
         return "Reserva Eliminada Exitosamente";
