@@ -27,7 +27,7 @@ public class ReservationController {
     }
 
     @GetMapping("/reservaciones")
-    List<Reserva> getReserva(@RequestBody Reserva reserva){
+    List<Reserva> getReserva(){
         return reservaRepository.findAll();
 
     }
